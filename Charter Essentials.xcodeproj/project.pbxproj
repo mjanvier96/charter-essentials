@@ -14,6 +14,7 @@
 		7FAFC7DF1A70B4D100D270C7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FAFC7DE1A70B4D100D270C7 /* Images.xcassets */; };
 		7FAFC7E21A70B4D100D270C7 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7FAFC7E01A70B4D100D270C7 /* LaunchScreen.xib */; };
 		7FAFC7EE1A70B4D100D270C7 /* Charter_EssentialsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FAFC7ED1A70B4D100D270C7 /* Charter_EssentialsTests.swift */; };
+		D18EDF761A71678100A80AAD /* TimeStuff.swift in Sources */ = {isa = PBXBuildFile; fileRef = D18EDF751A71678100A80AAD /* TimeStuff.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		7FAFC7E71A70B4D100D270C7 /* Charter EssentialsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Charter EssentialsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		7FAFC7EC1A70B4D100D270C7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7FAFC7ED1A70B4D100D270C7 /* Charter_EssentialsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Charter_EssentialsTests.swift; sourceTree = "<group>"; };
+		D18EDF751A71678100A80AAD /* TimeStuff.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeStuff.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +95,7 @@
 		7FAFC7D31A70B4D100D270C7 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D18EDF751A71678100A80AAD /* TimeStuff.swift */,
 				7FAFC7D41A70B4D100D270C7 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -216,6 +219,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7FAFC7DA1A70B4D100D270C7 /* SecondViewController.swift in Sources */,
+				D18EDF761A71678100A80AAD /* TimeStuff.swift in Sources */,
 				7FAFC7D61A70B4D100D270C7 /* AppDelegate.swift in Sources */,
 				7FAFC7D81A70B4D100D270C7 /* FirstViewController.swift in Sources */,
 			);
@@ -409,6 +413,7 @@
 				7FAFC7F31A70B4D200D270C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		7FAFC7F41A70B4D200D270C7 /* Build configuration list for PBXNativeTarget "Charter EssentialsTests" */ = {
 			isa = XCConfigurationList;
@@ -417,6 +422,7 @@
 				7FAFC7F61A70B4D200D270C7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
