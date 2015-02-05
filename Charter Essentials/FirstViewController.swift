@@ -30,19 +30,26 @@ class FirstViewController: UIViewController {
     }
     
     func updateTime(){
-        counterDownTimer.text = currentTime()
+    counterDownTimer.text = currentTime()
     }
 
     func currentTime() -> String {
-        let components = NSCalendar.currentCalendar().components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond | .CalendarUnitNanosecond, fromDate: NSDate())
-        let hour = components.hour
-        let minutes = components.minute
-        let seconds = components.second
-        let nanoseconds = components.nanosecond
-        //return hour.description + ":" + minutes.description + ":" + seconds.description + ":" + nanoseconds.description
-        return NSDate(timeIntervalSince1970: nil).timeIntervalSinceDate(components)
-    }
     
+        var twelve: NSDate = TimeStuff.createShit(13)
+        
+        
+        
+        let components = NSCalendar.currentCalendar().components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond | .CalendarUnitNanosecond, fromDate: NSDate())
+        //var blah: NSTimeInterval = NSDate().timeIntervalSinceDate(twelve)
+        var poop: NSTimeInterval = twelve.timeIntervalSinceDate(NSDate())
+    var blah = Int(poop)
+        let hour = blah / 3600
+        let minutes = (blah / 60) - (hour * 3600)
+        let seconds = blah - (hour * 3600) - (minutes * 60)
+        let nanoseconds = components.nanosecond
+        return hour.description + "h " + minutes.description + "m " + seconds.description + "s"
+     //return blah.description
+    }
     
     func DisplayCurrentTime(){
         counterDownTimer.text = TIME_ABSOLUTE.description
