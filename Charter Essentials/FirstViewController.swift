@@ -12,6 +12,7 @@ class FirstViewController: UIViewController {
 
     @IBOutlet var counterDownTimer: UILabel!
 
+    @IBOutlet weak var periodTable: UITableView!
     @IBOutlet var classPeriodLabel: UILabel!
     
     let date = NSDate()
@@ -34,12 +35,14 @@ class FirstViewController: UIViewController {
     counterDownTimer.text = currentTime()
     }
 
+    var Offset = -48.0
+    
     func currentTime() -> String {
     
         var periodArray = TimeStuff.periodTimes()
         var currentTime = NSDate()
         var i = 0;
-        while(periodArray[i].time.timeIntervalSince1970 < currentTime.timeIntervalSince1970){
+        while(periodArray[i].time.timeIntervalSince1970 + Offset < currentTime.timeIntervalSince1970){
             i++;
         }
         
@@ -48,10 +51,15 @@ class FirstViewController: UIViewController {
         
         
         classPeriodLabel.text = "Time until " + periodArray[i].description
-        var blah = Int(poop)
+        var blah = Int(poop + Offset)
         let hour = blah / 3600
         let minutes = ((blah - (hour * 3600)) / 60)
         let seconds = blah - (hour * 3600) - (minutes * 60)
+        
+        
+        
+        
+        
         if(seconds>9){
         return hour.description + "h " + minutes.description + "m " + seconds.description + "s"}
         else{
