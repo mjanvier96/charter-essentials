@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6254" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Item-->
@@ -54,20 +55,66 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="LTa-uk-oyr">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="iF2-lM-Z35">
+                                <rect key="frame" x="153" y="197" width="295" height="121"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="53" y="230" width="295" height="121"/>
+                                </variation>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="00000000000000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="1" translatesAutoresizingMaskIntoConstraints="NO" id="LTa-uk-oyr">
                                 <rect key="frame" x="16" y="95" width="568" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="226" id="Tf5-CC-chY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="75"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="38" y="50" width="324" height="234"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Tf5-CC-chY"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="87" y="99" width="226" height="123"/>
+                                    <mask key="constraints">
+                                        <include reference="Tf5-CC-chY"/>
+                                    </mask>
                                 </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="iF2-lM-Z35" secondAttribute="centerX" id="FcX-vK-tDx"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LTa-uk-oyr" secondAttribute="trailing" constant="71" id="IrK-77-7Gv"/>
+                            <constraint firstItem="LTa-uk-oyr" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="79" id="OZm-5Y-jcr"/>
+                            <constraint firstItem="iF2-lM-Z35" firstAttribute="top" secondItem="Ia1-K6-d13" secondAttribute="bottom" constant="210" id="s2h-Nj-fdp"/>
+                            <constraint firstItem="LTa-uk-oyr" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="71" id="syg-J7-4fN"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="IrK-77-7Gv"/>
+                                <exclude reference="OZm-5Y-jcr"/>
+                                <exclude reference="syg-J7-4fN"/>
+                                <exclude reference="FcX-vK-tDx"/>
+                                <exclude reference="s2h-Nj-fdp"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="IrK-77-7Gv"/>
+                                <include reference="OZm-5Y-jcr"/>
+                                <include reference="syg-J7-4fN"/>
+                                <include reference="FcX-vK-tDx"/>
+                                <include reference="s2h-Nj-fdp"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="First" image="first" id="acW-dT-cKf"/>
                     <connections>
+                        <outlet property="classPeriodLabel" destination="iF2-lM-Z35" id="gBm-yJ-9DM"/>
                         <outlet property="counterDownTimer" destination="LTa-uk-oyr" id="upX-Vl-pTA"/>
                     </connections>
                 </viewController>

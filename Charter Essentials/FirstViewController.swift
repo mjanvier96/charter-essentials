@@ -12,6 +12,7 @@ class FirstViewController: UIViewController {
 
     @IBOutlet var counterDownTimer: UILabel!
 
+    @IBOutlet var classPeriodLabel: UILabel!
     
     let date = NSDate()
     let calendar = NSCalendar.currentCalendar()
@@ -19,7 +20,7 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         counterDownTimer.text = "3:00"
         let method : Selector = "updateTime"
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: method, userInfo: nil, repeats: true)
+        var timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: method, userInfo: nil, repeats: true)
         
         super.viewDidLoad()
         
@@ -35,19 +36,27 @@ class FirstViewController: UIViewController {
 
     func currentTime() -> String {
     
-        var twelve: NSDate = TimeStuff.createShit(13)
+        var periodArray = TimeStuff.periodTimes()
+        var currentTime = NSDate()
+        var i = 0;
+        while(periodArray[i].time.timeIntervalSince1970 < currentTime.timeIntervalSince1970){
+            i++;
+        }
+        
+        var poop: NSTimeInterval = periodArray[i].time.timeIntervalSinceDate(NSDate())
         
         
         
-        let components = NSCalendar.currentCalendar().components(.CalendarUnitHour | .CalendarUnitMinute | .CalendarUnitSecond | .CalendarUnitNanosecond, fromDate: NSDate())
-        //var blah: NSTimeInterval = NSDate().timeIntervalSinceDate(twelve)
-        var poop: NSTimeInterval = twelve.timeIntervalSinceDate(NSDate())
-    var blah = Int(poop)
+        classPeriodLabel.text = "Time until " + periodArray[i].description
+        var blah = Int(poop)
         let hour = blah / 3600
-        let minutes = (blah / 60) - (hour * 3600)
+        let minutes = ((blah - (hour * 3600)) / 60)
         let seconds = blah - (hour * 3600) - (minutes * 60)
-        let nanoseconds = components.nanosecond
-        return hour.description + "h " + minutes.description + "m " + seconds.description + "s"
+        if(seconds>9){
+        return hour.description + "h " + minutes.description + "m " + seconds.description + "s"}
+        else{
+            return hour.description + "h " + minutes.description + "m 0" + seconds.description + "s"}
+        
      //return blah.description
     }
     
