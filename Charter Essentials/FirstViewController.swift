@@ -56,15 +56,31 @@ class FirstViewController: UIViewController {
         let minutes = ((blah - (hour * 3600)) / 60)
         let seconds = blah - (hour * 3600) - (minutes * 60)
         
-        
-        
-        
-        
-        if(seconds>9){
-        return hour.description + "h " + minutes.description + "m " + seconds.description + "s"}
+        var Hour = "0"
+        var Minutes="0"
+        var Seconds="0"
+        if(hour>9){
+            Hour = hour.description
+        }
         else{
-            return hour.description + "h " + minutes.description + "m 0" + seconds.description + "s"}
+            Hour = "0" + hour.description
+        }
+        if(minutes>9){
+            Minutes = minutes.description
+        }
+        else{
+            Minutes = "0" + minutes.description
+        }
+        if(seconds>9){
+            Seconds = seconds.description
+        }
+        else{
+            Seconds = "0" + seconds.description
+        }
         
+        
+            return Hour + "h " + Minutes + "m " + Seconds + "s"
+
      //return blah.description
     }
     
